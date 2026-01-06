@@ -1,0 +1,23 @@
+[project]
+name = "milvus"
+version = "0.1.0"
+description = "Milvus-based RAG service"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.120.1",
+    "uvicorn[standard]>=0.32",
+    "pymilvus>=2.4",
+    "requests",
+    "python-docx",
+    "pymupdf",
+    "openai>=1.0",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0"
+]
+
+[project.scripts]
+dev = "uvicorn src.main:app --reload --host 0.0.0.0 --port 8000"
+
+[tool.setuptools.packages.find]
+where = ["src"]
